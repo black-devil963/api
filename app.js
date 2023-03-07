@@ -11,6 +11,9 @@ imageLISTRouter=require('./routes/image list');
 volumeLISTRouter=require('./routes/volume list');
 versionRouter=require('./routes/version');
 createContainer=require('./routes/create container');
+pullImage=require('./routes/pull image');
+detailImg=require('./routes/detailsImg');
+Networkls=require('./routes/Network');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -35,6 +38,9 @@ app.use('/image-ls',imageLISTRouter);
 app.use('/volume-ls',volumeLISTRouter);
 app.use('/version',versionRouter);
 app.use('/createContainers*',createContainer);
+app.use('/PullImg*',pullImage);
+app.use('/DetailsImg*',detailImg);
+app.use('/Network',Networkls);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
