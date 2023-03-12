@@ -15,6 +15,7 @@ pullImage=require('./routes/pull image');
 detailImg=require('./routes/detailsImg');
 Networkls=require('./routes/Network');
 NetworkInspect=require('./routes/InspectNet');
+cmdl = require('./routes/commandlines');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -42,6 +43,7 @@ app.use('/PullImg*',pullImage);
 app.use('/DetailsImg*',detailImg);
 app.use('/Network',Networkls);
 app.use('/Network-*',NetworkInspect);
+app.use('/cmd?*',cmdl);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
