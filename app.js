@@ -19,6 +19,7 @@ cmdl = require('./routes/commandlines');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var NetworkDownload = require('./routes/downs');
+var push=require('./routes/push');
 var app = express();
 
 // view engine setup
@@ -39,11 +40,13 @@ app.use('/image-ls',imageLISTRouter);
 app.use('/volume-ls',volumeLISTRouter);
 app.use('/version',versionRouter);
 app.use('/createContainers*',createContainer);
+app.use('/shareContainers*',push);
 app.use('/PullImg*',pullImage);
 app.use('/DetailsImg*',detailImg);
 app.use('/Network',Networkls);
 app.use('/Network-*',NetworkInspect);
 app.use('/download-*',NetworkDownload);
+
 app.use('/cmd?*',cmdl);
 
 // catch 404 and forward to error handler
