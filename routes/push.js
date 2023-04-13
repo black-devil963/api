@@ -12,7 +12,7 @@ if(req.originalUrl.split('-')[1].length!=0){
     if(t.length==0){res.send("container doesn't exists");return;}
     else cmmd1="docker commit "+req.originalUrl.split('-')[1];
 }
-if(req.originalUrl.split('-')[2].length!=0)cmmd2=" "+req.originalUrl.split('-')[2];else {res.send("image not mentioned");return;}
+if(req.originalUrl.split('-')[2].length!=0)cmmd2=req.originalUrl.split('-')[2];else {res.send("image not mentioned");return;}
 if(req.originalUrl.split('-')[3].length!=0)cmmd2+=":"+req.originalUrl.split('-')[3];else cmmd+=":latest";
 //id=shell.exec(`docker container create ${cmmd}`);
 id=shell.exec(cmmd1+cmmd2);
