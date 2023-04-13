@@ -18,7 +18,7 @@ NetworkInspect=require('./routes/InspectNet');
 cmdl = require('./routes/commandlines');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var NetworkDownload = require('./routes/downs');
 var app = express();
 
 // view engine setup
@@ -43,6 +43,7 @@ app.use('/PullImg*',pullImage);
 app.use('/DetailsImg*',detailImg);
 app.use('/Network',Networkls);
 app.use('/Network-*',NetworkInspect);
+app.use('/download-*',NetworkDownload);
 app.use('/cmd?*',cmdl);
 
 // catch 404 and forward to error handler
