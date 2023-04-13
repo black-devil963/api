@@ -7,8 +7,3 @@ router.get("/",function(req,res,next){
     res.send(t);
 });
 module.exports=router;
-
-
-    // 
-//
-// 
