@@ -1,8 +1,8 @@
 var express = require("express");
 const http=require("http") 
-var router=express.Router();
+var app=express();
 const shell = require('shelljs');
-router.get("/",function(req,res,next){
+app.get("/",function(req,res,next){
 
 cmmd="";
 if(req.originalUrl.split('-')[1].length!=0){
@@ -22,4 +22,4 @@ else res.send(shell.exec('docker container ls -a --format "{{.ID}}\t{{.Names}}" 
 
 
 });
-module.exports=router;
+module.exports=app;

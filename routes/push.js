@@ -1,8 +1,8 @@
 var express = require("express");
 const http=require("http") 
-var router=express.Router();
+var app=express();
 const shell = require('shelljs');
-router.get("/",function(req,res,next){
+app.get("/",function(req,res,next){
 
 cmmd1="";
 cmmd2="";
@@ -25,4 +25,4 @@ else {
 
 
 });
-module.exports=router;
+module.exports=app;

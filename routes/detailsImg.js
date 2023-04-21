@@ -1,8 +1,8 @@
 var express = require("express");
 const http=require("http") 
-var router=express.Router();
+var app=express();
 const shell = require('shelljs');
-router.get("/",function(req,res,next){
+app.get("/",function(req,res,next){
 cmmd="";
 console.log(req.originalUrl)
 if(req.originalUrl.split('-')[1].length!=0)cmmd=req.originalUrl.split('-')[1];else {res.send("image not mentioned");return;}
@@ -15,4 +15,4 @@ else res.send(shell.exec('docker image ls -a --format "{{.ID}}\t{{.Repository}}:
 
 
 });
-module.exports=router;
+module.exports=app;
